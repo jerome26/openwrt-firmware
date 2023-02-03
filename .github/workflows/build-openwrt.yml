@@ -95,13 +95,6 @@ jobs:
     - name: Copy custom configuration
       run: |
         cp openwrt/.config .config
-      
-    - name: Auto Commit Config
-      uses: EndBug/auto-commit-action@v1
-      if: env.SAVE_CONFIG == 'true'
-      with:
-        message: "Automated Commit by GitHub Actions"
-        branch: main
 
     - name: Download package
       id: package
